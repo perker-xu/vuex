@@ -1,10 +1,10 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-Vue.use(Vuex)
+Vue.use(Vuex);
 
 // export 外部文件调用store 即对外公开
-export const store = new Vuex.Store({
+const store = new Vuex.Store({
   state:{
     products: [
       { name: '马云', price:200 },
@@ -14,3 +14,5 @@ export const store = new Vuex.Store({
     ]
   }
 });
+
+export default store;

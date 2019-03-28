@@ -6,6 +6,7 @@ import store from './store'
 Vue.config.productionTip = false
 
 new Vue({
+  // 引用router
   router,
   // 引用store
   store,

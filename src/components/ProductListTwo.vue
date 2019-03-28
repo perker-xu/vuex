@@ -12,8 +12,15 @@
 
 <script>
 export default {
-  name: 'ProductListTwo',
-  props:["products"]
+    name: 'ProductListTwo',
+    //   props:["products"]
+    // 接收store传值
+    computed: {
+        // products数据
+        products () {
+            return this.$store.state.products;
+        }
+    }
 }
 </script>
 
