@@ -12,8 +12,16 @@
 
 <script>
 export default {
-  name: 'ProductListOne',
-  props:["products"]
+    name: 'ProductListOne',
+    //   接收父组件传值
+    /* props:["products"] */
+    // 接收store传值
+    computed: {
+        // products数据
+        products () {
+            return this.$store.state.products;
+        }
+    }
 }
 </script>
 

@@ -7,6 +7,7 @@ Vue.config.productionTip = false
 
 new Vue({
   router,
+  // 引用store
   store,
   render: h => h(App)
 }).$mount('#app')
