@@ -1,13 +1,36 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <product-list-one v-bind:products="products"></product-list-one>
+    <product-list-two v-bind:products="products"></product-list-two>
   </div>
 </template>
 
-<style lang="less">
+<script>
+import ProductListOne from '@/components/ProductListOne.vue'
+import ProductListTwo from '@/components/ProductListTwo.vue'
 
+export default {
+  name: 'app',
+  data (){
+    return {
+      products: [
+        { name: '马云', price:200 },
+        { name: '马化腾', price:140 },
+        { name: '马冬梅', price:20 },
+        { name: '马蓉', price:10 },
+      ]
+    }
+  },
+  components:{
+    ProductListOne,
+    ProductListTwo
+  }
+}
+</script>
+
+<style lang="less">
+#app{
+  font-family: Ubuntu;
+  color: #555;
+}
 </style>
