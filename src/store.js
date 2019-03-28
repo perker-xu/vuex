@@ -26,6 +26,9 @@ const store = new Vuex.Store({
       );
       return saleProducts;
     }
+  },
+  mutations: {
+    
   }
 });
 
