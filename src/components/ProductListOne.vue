@@ -12,6 +12,10 @@
 </template>
 
 <script>
+// 在 vue-cli2.x 中还需要在 .babelc文件中插入 ["stage-2"]  在vue-cli3.x中则不需要
+// 引入 mapGetters, mapActions方法
+import {mapGetters, mapActions} from 'vuex';
+
 export default {
     name: 'ProductListOne',
     //   接收父组件传值
@@ -22,25 +26,34 @@ export default {
         products () {
             return this.$store.state.products;
         },
-        saleProducts (){
+        /* saleProducts (){
             return this.$store.getters.saleProducts;
-        }
+        } */
+        //  依赖 npm install babel-preset-stage-2 --save-dev插件
+        ...mapGetters([
+            // getters里面的方法
+            'saleProducts'
+        ])
     },
     methods: {
         /* actions使用 */
         // 商品降价
+        /* 
         reducePrice: function(amount){
             // 在严格模式下报错
-            /* 
-            this.$store.state.products.forEach(product => {
-                product.price -= 2;
-            }); 
-            */
+            // this.$store.state.products.forEach(product => { product.price -= 2; }); 
+           
             // 在任何模式下均适用   
             // this.$store.commit('reducePrice');
             // 分发  调用actions里面的方法
             this.$store.dispatch('reducePrice',amount);
         }
+        */
+       //  依赖 npm install babel-preset-stage-2 --save-dev插件
+       ...mapActions([
+           // actions里面的方法
+           'reducePrice'
+       ])
     }
 }
 </script>
