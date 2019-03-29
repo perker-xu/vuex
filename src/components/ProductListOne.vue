@@ -8,6 +8,7 @@
           </li>
       </ul>
       
+      <button @click="reducePrice">商品降价</button>
   </div>
 </template>
 
@@ -24,6 +25,20 @@ export default {
         },
         saleProducts (){
             return this.$store.getters.saleProducts;
+        }
+    },
+    methods: {
+        /* mutations使用 */
+        // 商品降价
+        reducePrice: function(){
+            // 在严格模式下报错
+            /* 
+            this.$store.state.products.forEach(product => {
+                product.price -= 2;
+            }); 
+            */
+            // 在任何模式下均适用   
+            this.$store.commit('reducePrice');
         }
     }
 }

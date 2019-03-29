@@ -3,8 +3,9 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex);
 
-// export 外部文件调用store 即对外公开
 const store = new Vuex.Store({
+  // 严格模式
+  strict: true,
   state: {
     products: [
       { name: '马云', price:200 },
@@ -28,8 +29,13 @@ const store = new Vuex.Store({
     }
   },
   mutations: {
-    
+    reducePrice: state => {
+      state.products.forEach(product => {
+        product.price -= 2;
+      });
+  }
   }
 });
 
+// export 外部文件调用store 即对外公开
 export default store;
