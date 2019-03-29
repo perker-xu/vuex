@@ -7,7 +7,7 @@
               <span class="price"> ${{ product.price }} </span>
           </li>
       </ul>
-      <button @click="reducePrice">商品降价</button>
+      <button @click="reducePrice(4)">商品降价</button>
   </div>
 </template>
 
@@ -27,9 +27,9 @@ export default {
         }
     },
     methods: {
-        /* mutations使用 */
+        /* actions使用 */
         // 商品降价
-        reducePrice: function(){
+        reducePrice: function(amount){
             // 在严格模式下报错
             /* 
             this.$store.state.products.forEach(product => {
@@ -37,7 +37,9 @@ export default {
             }); 
             */
             // 在任何模式下均适用   
-            this.$store.commit('reducePrice');
+            // this.$store.commit('reducePrice');
+            // 分发  调用actions里面的方法
+            this.$store.dispatch('reducePrice',amount);
         }
     }
 }
