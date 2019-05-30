@@ -59,15 +59,15 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.product-list-one{
+.product-list-one {
     background-color: #fff8b1;
     box-shadow: 1px 2px 3px rgba(0, 0, 0, .2);
     margin-bottom: 30px;
     padding: 10px 20px;
-    ul{
+    ul {
         padding: 0;
         list-style-type: none;
-        li{
+        li {
             margin-right: 10px;
             margin-top: 10px;
             padding: 20px;
